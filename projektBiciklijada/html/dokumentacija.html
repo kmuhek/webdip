@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <title>Dokumentacija</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="naslov" content="PocetnaStranica" />
+    <meta name="author" content="KMuhek" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:wght@300&family=Walter+Turncoat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/kmuhek.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../css/kmuhek_prilagodbe.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script defer src="../javascript/kmuhek.js"></script>
+  </head>
+  <body>
+    <header class="headerGrid">
+        <div id="izbornik" class="izbornik">
+          <div class="zatvoriGumbPozicija">
+            <a href="index.html"
+              ><img class="logo" src="../multimedija/logo.png"
+            /></a>
+            <a href="" class="zatvoriGumb" id="zatvoriIzbornik">&times;</a>
+          </div>
+            <a href="dokumentacija.html">Dokumentacija</a>
+            <a href="oAutoru.html">O autoru</a>
+            <a href="prijava.php">Prijava</a>
+            <a href="registracija.html">Registracija</a>
+            <a href="profil.php">Moj profil</a>
+            <a href="kreiranjeLokacije.php">Kreiranje lokacije</a>
+            <a href="kreiranjeUtrke.php">Kreiranje utrke</a>
+            <a href="otkljucavanjeBlokiranih.php">Blokirani korisnici</a>
+            <a href="evidencijaRezultata.php">Evidencija rezultata</a>
+            <a href="otkljucavanjeBlokiranih.php">Otključavanje/zaključavanje korisnika</a>
+            <a href="popisZavrsenihUtrka.php">Popis završenih utrka</a>
+        </div>
+  
+        <div class="gumbIzbornik" id="otvoriIzbornik">&#9776;</div>
+  
+        <h1 class="naslov">Dokumentacija</h1>
+
+        
+        <form action="../php/odjava.php">
+            <input type="submit" class="gumbOdjava" name="gumbOdjava" value="odjava">
+        </form>
+    </header>
+    <main>
+        <h2 class="podnaslovi">Opis projektnog zadatka</h2>
+        <p class="opisProjekta">
+            Projekt je imao temu biciklijada. Trebalo je napraviti web aplikaciju
+            za održavanje biciklijada i utrka na određenim lokacijama. Sustav se sastoji
+            od četiri uloga: neregistrirani korisnik, registrirani korisnik, moderator
+            i administrator. Administrator je najviša uloga u sustavu te ima pristup
+            svim funkcionalnostima ispod njega. Nakon administratora slijedi moderator,
+            pa registrirani korisnik i na kraju se nalazi neregistrirani korisnik. Uloge 
+            se mogu prijaviti u sustav ili registrirati. Neregistrirani korisnik može 
+            vidjeti galeriju pobjednika, lokacije biciklijada i utrke. Utrke može 
+            sortirati i pretraživati. Registrirani korisnik osim funkcionalnosti neregistriranog
+            može se prijaviti na utrku, platiti račun za određeni utrku i vidi svoje
+            prijave i rezultate na utrkama. Moderator može evidentirati sve podatke u vezi
+            rezultata svakog korisnika. Administrator kreira lokacije, utrke i proglašava pobjednika
+            utrke. 
+        </p>
+
+        <h2 class="podnaslovi">Opis projektnog rješenja</h2>
+        <p class="opisProjekta">
+            U projektu su u potpunosti realizirane uloge: neregistrirani korisnik i
+            registrirani korisnik. Administrator nije realiziran u potpunosti samo 
+            dijelovi, a moderator nije uopće realiziran. Prijava i registracija su 
+            realizirane kao što i neke funkcionalnosti sustava. Za slanje upita na 
+            bazu koristio se PHP, dok su se podaci na aplikaciji učitavali pomoću 
+            AJAX-a. Aplikacija je prilagođena za sve dimenzije ekrana te nema prijeloma
+            kod smanjenja.
+        </p>
+      
+        <h2 class="podnaslovi">ERA model</h2>
+        <div class="modeli" >
+            <img class="slikeModela" src="../multimedija/eramodel.png">
+        </div>
+
+        <h2 class="podnaslovi">Navigacijski dijagram</h2>
+        <div class="modeli" >
+            <img class="slikeModela" src="../multimedija/navigacijskidijagram.jpg">
+        </div>
+
+        <h2 class="podnaslovi">Popis i opis skripata</h2>
+        <div class="pozicijaTablica">
+            <div class="overflowTablica">
+              <table class="tablica" id="tablica">
+                <thead class="zaglavljeTablice">
+                  <tr>
+                    <td>Naziv skripte</td>
+                    <td>Opis skripte</td>
+                  </tr>
+                </thead>
+                <tbody id="bodyTablice">
+                    <tr>
+                        <td>blokirniAdmin.js</td>
+                        <td>U ovoj skripti se dohvaćaju svi blokirani korisnici tako što se pošalju podaci na bazu AJAX-om i nakon dohvata podaci se upisuju u tablicu.</td>
+                    </tr>
+                    <tr>
+                        <td>evidencijaRezultata.js</td>
+                        <td>U ovoj skripti se dohvaćaju svi korisnici i njihove prijave tako što se pošalju podaci na bazu AJAX-om i nakon dohvata podaci se upisuju u tablicu.</td>
+                    </tr>
+                    <tr>
+                        <td>galerija.js</td>
+                        <td>Popunjava se tablica pomoću AJAX-a kako bi se prikazala galerija pobjednika</td>
+                    </tr>
+                    <tr>
+                        <td>kreiranjeLokacije.js</td>
+                        <td>AJAX-om se šalju podaci koje administrator upiše i lokacije u bazi se ažuriraju.</td>
+                    </tr>
+                    <tr>
+                        <td>kreiranjeUtrke.js</td>
+                        <td>AJAX-om se šalju podaci koje administrator upiše i utrke u bazi se ažuriraju.</td>
+                    </tr>
+                    <tr>
+                        <td>lokacijeBiciklijada.js</td>
+                        <td>Prikaz podataka u tablicu lokacija biciklijada.</td>
+                    </tr>
+                    <tr>
+                        <td>mojePrijave.js</td>
+                        <td>Prikaz korisnikovih prijava.</td>
+                    </tr>
+                    <tr>
+                        <td>mojiRezultati.js</td>
+                        <td>Prikaz korisnikovih rezultata.</td>
+                    </tr>
+                    <tr>
+                        <td>odrediPobjednika.js</td>
+                        <td>Šalju se podaci koje administrator upiše kako bi proglasio korisnika neke utrke.</td>
+                    </tr>
+                    <tr>
+                        <td>popisUtrka.js</td>
+                        <td>Dohvat podataka iz baze za prikazivanje u tablici.</td>
+                    </tr>
+                    <tr>
+                        <td>prijava.js</td>
+                        <td>Funkcionalnosti koje se tiču prijave.</td>
+                    </tr>
+                    <tr>
+                        <td>prijavaNaUtrku.js</td>
+                        <td>Šalje se zahtjev na bazu da se korisnik prijavi na utrku.</td>
+                    </tr>
+                    <tr>
+                        <td>registracija.js</td>
+                        <td>Funkcionalnosti koje se tiču registracije.</td>
+                    </tr>
+                    <tr>
+                        <td>zavrseneUtrke.js</td>
+                        <td>šalje se zahtjev na bazu da se prikažu podaci u tablici, a podaci se tiču završenih utrka.</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modeli" >
+            <img class="slikeModela" src="../multimedija/popisSkripata.png">
+        </div>
+
+        <h2 class="podnaslovi">Popis korištenih tehnologija i alata</h2>
+        <p class="opisProjekta">
+            Korištene su osnovne web tehnologije: HTML, CSS, JavaScript i PHP. Uz to 
+            korištena je JQuery biblioteka.
+        </p>
+
+        <h2 class="podnaslovi">Popis vanjskih biblioteka</h2>
+        <p class="opisProjekta">
+            Korištene su skripte baza.class.php i sesija.class.php koje su skinute
+            sa moodle-a. Uz to korištena je JavaScript skripta koja je preuzeta sa 
+            Google-ovog servisa koja se nalazi u datotekama: registracija.html te 
+            su njezina svojstva korištena u registracija.js kako bi se napravila
+            funkcionalnost CAPTCHA.
+        </p>
+    </main>
+    <footer>
+      <p>
+        &copy Kristina Muhek<br />
+        Kontakt: kmuhek@foi.hr
+      </p>
+    </footer>
+  </body>
+</html>

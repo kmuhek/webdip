@@ -1,0 +1,30 @@
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 15px;
+  }
+
+  .naslov{
+    font-size: 18px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+  .podaciKorisnik {
+    grid-template-columns: 1fr;
+  }
+
+  .tabliceProfila {
+    text-align: center;
+    justify-self: center;
+    font-size: 10px;
+    width: 430px;
+  }
+}

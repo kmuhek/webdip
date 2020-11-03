@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <title>Registracija</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="naslov" content="PocetnaStranica" />
+    <meta name="author" content="KMuhek" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mali:wght@300&family=Walter+Turncoat&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="../css/kmuhek.css" rel="stylesheet" type="text/css" />
+    <link
+      href="../css/kmuhek_prilagodbe.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="../javascript/kmuhek.js"></script>
+    <script defer src="../javascript/registracija.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <header class="headerGrid">
+        <div id="izbornik" class="izbornik">
+          <div class="zatvoriGumbPozicija">
+            <a href="index.html"
+              ><img class="logo" src="../multimedija/logo.png"
+            /></a>
+            <a href="" class="zatvoriGumb" id="zatvoriIzbornik">&times;</a>
+          </div>
+          <a href="dokumentacija.html">Dokumentacija</a>
+          <a href="oAutoru.html">O autoru</a>
+          <a href="prijava.php">Prijava</a>
+          <a href="registracija.html">Registracija</a>
+          <a href="profil.php">Moj profil</a>
+          <a href="kreiranjeLokacije.php">Kreiranje lokacije</a>
+          <a href="kreiranjeUtrke.php">Kreiranje utrke</a>
+          <a href="otkljucavanjeBlokiranih.php">Blokirani korisnici</a>
+          <a href="evidencijaRezultata.php">Evidencija rezultata</a>
+          <a href="otkljucavanjeBlokiranih.php">Otključavanje/zaključavanje korisnika</a>
+          <a href="popisZavrsenihUtrka.php">Popis završenih utrka</a>
+        </div>
+  
+        <div class="gumbIzbornik" id="otvoriIzbornik">&#9776;</div>
+  
+        <h1 class="naslov">Registracija</h1>
+  
+        <form action="../php/odjava.php">
+          <input type="submit" class="gumbOdjava" name="gumbOdjava" value="odjava">
+        </form>
+      </header>
+    <main class="formaPrijava">
+      <form
+        class="formaLokacija"
+        method="POST"
+        id="formaRegistracija"
+        name="formaRegistracija"
+        action="../php/validacijaPosluziteljRegistracija.php"
+      >
+        <label for="Ime">Ime:</label><br />
+        <input type="text" name="ime" id="ime" /><br />
+
+        <span class="greska" id="imeGreska"></span><br />
+
+        <label for="Prezime">Prezime:</label><br />
+        <input type="text" name="prezime" id="prezime" /><br />
+
+        <span class="greska" id="prezimeGreska"></span><br />
+
+        <label for="Email">E-mail:</label><br />
+        <input type="email" name="email" id="email" /><br />
+
+        <span class="greska" id="emailGreska"></span><br />
+
+        <label for="Korime">Korisničko ime:</label><br />
+        <input type="text" name="korime" id="korime" /><br />
+
+        <span class="greska" id="korimeGreska"></span><br />
+
+        <label for="Lozinka">Lozinka:</label><br />
+        <input type="password" name="lozinka" id="lozinka" /><br />
+
+        <span class="greska" id="lozinkaGreska"></span><br />
+
+        <label for="PotvrdaLozinke">Potvrda lozinke:</label><br />
+        <input
+          type="password"
+          name="potvrdaLozinke"
+          id="potvrdaLozinke"
+        /><br />
+
+        <span class="greska" id="potvrdaLozinkeGreska"></span><br />
+
+        <div
+          class="g-recaptcha"
+          data-callback="captchaVerifikacija"
+          data-sitekey="6Lf_p_4UAAAAAB5ca9FVha85lkgtvud1b8W1vXbM"
+        ></div>
+
+        <button id="gumbReg" name="gumbReg" class="gumbKreirajLok">
+          Registriraj se
+        </button>
+      </form>
+    </main>
+    <footer>
+      <p>
+        &copy Kristina Muhek<br />
+        Kontakt: kmuhek@foi.hr
+      </p>
+    </footer>
+  </body>
+</html>
